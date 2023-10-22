@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" type="text\css" href="https://fonts.google.com/specimen/Inter">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | News homepage</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    * 
+    {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      box-sizing: border-box;
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      font-size: 15px;
+    }
+
+    .page-content {
+      padding: 50px 70px
+    }
+
+    nav 
+    {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      margin-bottom: 40px
+    }
+
+    .menu {
+      display: none;
+    }
+
+    .nav-list > li > a {
+      text-decoration: none;
+      color: hsl(240, 100%, 5%);
+    }
+
+    .top {
+      display: flex;
+      margin-bottom: 50px
+    }
+
+    .title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: hsl(240, 100%, 5%);
+    }
+
+    .nav-list li {
+      list-style: none;
+      padding-right: 20px;
+      display: inline
+    }
+
+    a:active {
+      color: hsl(5, 85%, 63%);
+    }
+
+    .header-img-desktop {
+      width: 95%;
+      margin-bottom: 30px
+    }
+
+    .rd-more {
+      text-transform: uppercase;
+      background: hsl(5, 85%, 63%);
+      border: none;
+      padding: 15px 20px;
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 2px
+    }
+
+    .rd-more:active {
+      background: hsl(240, 100%, 5%);
+    }
+
+    .rd-more-main {
+      margin-right: 10%;
+      width: 40%;
+    }
+
+    .header-paragraph {
+      margin-bottom: 2.5rem;
+      color: hsl(236, 13%, 42%);
+      
+    }
+
+    .lower-top {
+      display: flex;
+      justify-content: space-between
+    }
+
+    .space {
+      margin-top: 40px
+    }
+
+  .new {
+    color: hsl(35, 77%, 62%);
+    margin-bottom: 20px;
+    font-size: 2.5rem
+  }
+
+  .subtp {
+    color: hsl(36, 100%, 99%);
+    margin-bottom: 15px
+  }
+  .subtp-pg {
+    color: hsl(233, 8%, 79%);
+    margin-bottom: 25px;
+  }
+
+  hr {
+    border: none;
+    height: 1px;
+    background: hsl(233, 8%, 79%);
+    width: 97%;
+    margin: auto;
+    margin-bottom: 25px
+  }
+  .side-cont {
+    background: hsl(240, 100%, 5%);
+    padding-left: 25px;
+    width: 45%;
+  }
+
+  .side-cont > h2 > a {
+    text-decoration: none;
+    color: hsl(36, 100%, 99%);
+  }
+
+  .side-cont > h2 > a:active {
+    color: hsl(35, 77%, 62%);
+  }
+
+  .art {
+    color: hsl(236, 13%, 42%);
+    margin-bottom: 7px
+  }
+
+  .art-pg {
+    font-size: 15px
+  }
+
+  .art-main {
+    display: flex;
+    margin-right: 1.5rem
+  }
+
+  .art-title {
+    color: hsl(240, 100%, 5%);
+    margin-bottom: 5px
+  }
+
+  .art-title:active {
+    color: hsl(5, 85%, 63%);
+  }
+  .details {
+    align-self: center
+  }
+
+  .bottom {
+    display: flex
+  }
+  .art-pg {
+    color: hsl(236, 13%, 42%);
+  }
+
+  .bottom-img {
+    height: 130px;
+    width: 100px;
+    margin-right: 10px;
+  }
+
+  @media (max-width: 768px) {
+    * {
+      margin: unset
+    }
+    body {
+      width: 100vw
+    }
+    .page-content {
+      padding: 20px 10px
+    }
+    .nav-list {
+      display: none
+    }
+
+    .top {
+      display: unset
+    }
+
+    .lower-top {
+      display: unset;
+    }
+
+    .mobile-header {
+      width: 100%;
+    }
+
+    .title {
+      white-space: unset;
+      margin-bottom: 10px
+    }
+
+    .rd-more-main {
+      width: unset
+    }
+
+    .rd-more {
+      padding: 17px 25px;
+    }
+
+    .side-cont {
+      width: 100%;
+      padding: 5px 10px 10px 15px;
+      margin: 20px 0;
+    }
+
+    .art-main {
+      margin: 10px
+    }
+
+    .bottom {
+      display: unset;
+    }
+
+    .toggle {
+      align-self: center;
+    }
+
+    .line {
+      background: hsl(240, 100%, 5%);
+      height: 0.3rem;
+      width: 2.7rem;
+      margin-bottom: 3px;
+    }
+
+    .menu {
+      background: hsl(36, 100%, 99%);
+      position: absolute;
+      height: 100%;
+      width: 70%;
+      right: 0;
+      filter: drop-shadow(-150px 0 150px)
+    }
+
+    .menu-ul {
+      margin-top: 50%
+    }
+
+    .menu-ul li {
+      list-style: none;
+      margin-bottom: 15px;
+      margin-left: 15px
+    }
+
+    .menu-ul li:hover {
+      animation: scale 1s ease-in-out 1;
+    }
+
+    @keyframes scale {
+      from {
+        transform: scale(1.0)
+      }
+      to {
+        transform: scale(1.2)
+      }
+    }
+
+    .menu-ul > li > a {
+      text-decoration: none;
+      color: hsl(240, 100%, 5%);
+      font-size: 1.2rem;
+      
+    }
+    .close-btn {
+      font-size: 1.5rem;
+      text-align: end;
+      margin: 20px 10px 0 0
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <div class="close-btn">Close</div>
+      <ul class="menu-ul">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">New</a>
+            <li><a href="#">Popular</a>
+              <li><a href="#">Trending</a>
+                <li><a href="#">Categories</a>
+        </ul>
+  </div>
+  <main class="page-content">
+  <nav>
+  <img src="./assets/images/logo.svg" class="logo" alt="logo">
+  <div class="toggle">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+  <ul class="nav-list">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">New</a>
+    <li><a href="#">Popular</a>
+      <li><a href="#">Trending</a>
+        <li><a href="#">Categories</a>
+</ul>
+  
+</nav>
+
+<div class="top">
+<div class="first-grid">
+  <picture>
+      <source srcset="./assets/images/image-web-3-mobile.jpg" media="(max-width: 425px)" class="mobile-header">
+      <img src="./assets/images/image-web-3-desktop.jpg" alt="header-img" class="header-img-desktop">
+</picture>
+  <div class="lower-top">
+  <h1 class="title">The Bright<br> Future of Web 3.0?</h1>
+
+  <div class="rd-more-main">
+      <p class="header-paragraph">We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+      But is it really fulfilling its promise?</p>
+      <button class="rd-more">Read more</button>
+      </div>
+  </div>
+  </div>
+  <div class="side-cont">
+    <div class="space"></div>
+  <h1 class="new">New</h1>
+
+  <h2 class="subtp"><a href="#">Hydrogen VS Electric Cars</a></h2>
+  <p class="subtp-pg">Will hydrogen-fueled cars ever catch up to EVs?</p>
+    <hr>
+  <h2 class="subtp"><a href="#">The Downsides of AI Artistry</a></h2>
+  <p class="subtp-pg">What are the possible adverse effects of on-demand AI image generation?</p>
+  <hr>
+  <h2 class="subtp"><a href="#">Is VC Funding Drying Up?</a></h2>
+  <p class="subtp-pg">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+</div>
+</div>
+
+<div class="bottom">
+  <div class="art-main one">
+  <img src="./assets/images/image-retro-pcs.jpg" alt="retro-PCs" class="bottom-img">
+  <div class="details">
+  <h1 class="art">01</h1>
+  <h3 class="art-title">Reviving Retro PCs</h3>
+  <p class="art-pg">What happens when old PCs are given modern upgrades?</p>
+</div>
+</div>
+
+<div class="art-main two">
+  <img src="./assets/images/image-top-laptops.jpg" alt="Top Laptops" class="bottom-img">
+  <div class="details">
+  <h1 class="art">02</h1>
+  <h3 class="art-title">Top 10 Laptops of 2022</h3>
+  <p class="art-pg">Our best picks for various needs and budgets.</p>
+</div>
+</div>
+
+  <div class="art-main three">
+    <img src="./assets/images/image-gaming-growth.jpg" alt="Gaming Growth" class="bottom-img">
+    <div class="details">
+  <h1 class="art">03</h1>
+  <h3 class="art-title">The Growth of Gaming</h3>
+  <p class="art-pg">How the pandemic has sparked fresh opportunities.</p>
+  </div>
+  </div>
+  </main>
+  </main>
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+</body>
+<script src="index.js"></script>
+</html>
